@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-console.log('Value: ' + process.env.SPOTIFY_API_ID_AND_KEY);
+console.log('Value: ' + process.env.REACT_APP_SPOTIFY_API_ID_AND_KEY);
 
 function App() {
   return (
