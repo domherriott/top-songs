@@ -5,12 +5,11 @@ import urllib.request
 import json
 from datetime import date
 
-
 scope = "user-top-read"
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
-results = sp.current_user_top_tracks(limit=20, offset=0, time_range='medium_term')
+results = sp.current_user_top_tracks(limit=20, offset=0, time_range='short_term')
 track_info = {}
 
 for idx, item in enumerate(results['items']):
@@ -31,15 +30,13 @@ for idx, item in enumerate(results['items']):
     }
     print(folder_name)
     image_url = item['album']['images'][0]['url']
-    print(item['name'], '-', artists)
+    # print(item['name'], '-', artists)
     #print(idx, track['artists'][0]['name'], " – ", track['name'])
 
     urllib.request.urlretrieve(image_url, folder_name + "/image.jpeg")
 
-print(track_info)
-
-today = date.today()
 # Textual month, day and year	
+today = date.today()
 d = today.strftime("%d %B %Y")
 track_info['generated_date'] = d
 
