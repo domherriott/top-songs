@@ -5,7 +5,7 @@ echo Date:
 date
 
 echo -e "\n"
-cd /Users/dherriott/Documents/top-songs/spotify_extract
+cd /root/documents/top-songs/spotify_extract
 
 echo -e "\n"
 git checkout main
