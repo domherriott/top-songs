@@ -1,11 +1,17 @@
 #!/bin/zsh
 
+echo "Setting up python env..."
+echo -e "\n"
+cd /root/documents/top-songs/spotify_extract
+
+python -m venv venv
+source myvenv/bin/activate
+python -m pip install -r requirements.txt
+
+
 echo -e "\nStarting Spotify extract...\n"
 echo Date:
 date
-
-echo -e "\n"
-cd /root/documents/top-songs/spotify_extract
 
 echo -e "\n"
 git checkout main
