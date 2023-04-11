@@ -4,6 +4,9 @@ from spotipy.oauth2 import SpotifyOAuth
 import urllib.request
 import json
 from datetime import date
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 scope = "user-top-read"
 

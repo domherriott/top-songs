@@ -1,13 +1,13 @@
 #!/bin/zsh
 
+alias python='/usr/local/bin/python3.11'
+
 echo "Setting up python env..."
 echo -e "\n"
-cd /root/documents/top-songs/spotify_extract
 
 python -m venv venv
-source myvenv/bin/activate
+source venv/bin/activate
 python -m pip install -r requirements.txt
-
 
 echo -e "\nStarting Spotify extract...\n"
 echo Date:
@@ -20,7 +20,7 @@ echo -e "\n"
 git fetch origin main
 
 echo -e "\n"
-python3 get_tracks.py
+python get_tracks.py
 
 echo -e "\n"
 git add ../src/tracks/*
